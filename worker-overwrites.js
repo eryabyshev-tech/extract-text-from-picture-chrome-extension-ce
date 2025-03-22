@@ -45,7 +45,7 @@ self.fetch = new Proxy(self.fetch, {
                         const length = Number(r.headers.get('Content-Length'));
 
                         while (true) {
-                            const { done, value } = await reader.read();
+                            const {done, value} = await reader.read();
                             if (done) break;
                             bytes += value.byteLength;
                             postMessage({
